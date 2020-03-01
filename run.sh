@@ -19,3 +19,4 @@ for trace in ${TraceList[@]}; do
 done
 
 rm tmp/*
+rm results/*.eps
