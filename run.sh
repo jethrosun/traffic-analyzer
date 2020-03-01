@@ -14,5 +14,8 @@ declare -a TraceList=(
 for trace in ${TraceList[@]}; do
 	echo $trace
 	python bin/procpktsize.py  $HOME/traces/$trace > tmp/$trace.pktsize
-	python bin/pltpktsize.py  tmp/$trace.pktsize  results/$trace.eps
+	python bin/pltpktsize.py  tmp/$trace.pktsize  tmp/$trace.eps
+	epstopdf tmp/$trace.eps results/$trace.pdf
 done
+
+rm tmp/*
